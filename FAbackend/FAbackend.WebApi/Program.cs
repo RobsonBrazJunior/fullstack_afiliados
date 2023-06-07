@@ -1,8 +1,13 @@
+using FAbackend.Application.AutoMapper;
 using FAbackend.Application.Interfaces;
 using FAbackend.Application.Services;
+using FAbackend.Domain.Models;
+using FAbackend.Domain.Validations;
 using FAbackend.Infra.Data.Context;
 using FAbackend.Infra.Data.Repository.Interfaces;
 using FAbackend.Infra.Data.Repository.Repositories;
+using FluentValidation;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +28,10 @@ builder.Services.AddDbContext<ApplicationContext>(options =>
 });
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ICreatorService, CreatorService>();
+builder.Services.AddScoped<IValidator<CreatorModel>, CreatorModelValidation>();
+builder.Services.AddAutoMapper(typeof(CreatorEntityToModelMappingProfile),
+							   typeof(CreatorModelToEntityMappingProfile),
+							   typeof(AffiliatedEntityModelMappingProfile));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

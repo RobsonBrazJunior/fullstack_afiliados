@@ -19,9 +19,9 @@ namespace FAbackend.Infra.Data.Repository.Repositories
 		public ICreatorRepository CreatorRepository { get { return _creatorRepository; } }
 		public IAffiliatedRepository AffiliatedRepository { get { return _affiliatedRepository; } }
 
-		public int Save()
+		public void Save()
 		{
-			return _context.SaveChanges();
+			_context.SaveChanges();
 		}
 
 		public void Dispose()

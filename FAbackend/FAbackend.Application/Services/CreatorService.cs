@@ -11,37 +11,40 @@ namespace FAbackend.Application.Services
 	{
 		private readonly IMapper _mapper;
 		private readonly IValidator<CreatorModel> _validator;
-		private readonly ICreatorRepository _creatorRepository;
+		private readonly IUnitOfWork _unitOfWork;
 
 		public CreatorService(IMapper mapper,
 							  IValidator<CreatorModel> validator,
-							  ICreatorRepository creatorRepository)
+							  IUnitOfWork unitOfWork)
 		{
 			_mapper = mapper;
 			_validator = validator;
-			_creatorRepository = creatorRepository;
+			_unitOfWork = unitOfWork;
 		}
 
 		public CreatorModel Get(int id)
 		{
-			return _mapper.Map<CreatorModel>(_creatorRepository.Get(id));
+			return _mapper.Map<CreatorModel>(_unitOfWork.CreatorRepository.Get(id));
 		}
 
 		public void Add(CreatorModel creator)
 		{
 			_validator.ValidateAndThrow(creator);
-			_creatorRepository.Add(_mapper.Map<Creator>(creator));
+			_unitOfWork.CreatorRepository.Add(_mapper.Map<Creator>(creator));
+			_unitOfWork.Save();
 		}
 
 		public void Update(CreatorModel creator)
 		{
 			_validator.ValidateAndThrow(creator);
-			_creatorRepository.Update(_mapper.Map<Creator>(creator));
+			_unitOfWork.CreatorRepository.Update(_mapper.Map<Creator>(creator));
+			_unitOfWork.Save();
 		}
 
 		public void Remove(CreatorModel creator)
 		{
-			_creatorRepository.Remove(_mapper.Map<Creator>(creator));
+			_unitOfWork.CreatorRepository.Remove(_mapper.Map<Creator>(creator));
+			_unitOfWork.Save();
 		}
 	}
 }

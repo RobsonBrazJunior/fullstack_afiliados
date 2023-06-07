@@ -11,37 +11,37 @@ namespace FAbackend.Application.Services
 	{
 		private readonly IMapper _mapper;
 		private readonly IValidator<AffiliatedModel> _validator;
-		private readonly IAffiliatedRepository _affiliatedRepository;
+		private readonly IUnitOfWork _unitOfWork;
 
 		public AffiliatedService(IMapper mapper,
 								 IValidator<AffiliatedModel> validator,
-								 IAffiliatedRepository affiliatedRepository)
+								 IUnitOfWork unitOfWork)
 		{
 			_mapper = mapper;
 			_validator = validator;
-			_affiliatedRepository = affiliatedRepository;
+			_unitOfWork = unitOfWork;
 		}
 
 		public AffiliatedModel Get(int id)
 		{
-			return _mapper.Map<AffiliatedModel>(_affiliatedRepository.Get(id));
+			return _mapper.Map<AffiliatedModel>(_unitOfWork.AffiliatedRepository.Get(id));
 		}
 
 		public void Add(AffiliatedModel affiliated)
 		{
 			_validator.ValidateAndThrow(affiliated);
-			_affiliatedRepository.Add(_mapper.Map<Affiliated>(affiliated));
+			_unitOfWork.AffiliatedRepository.Add(_mapper.Map<Affiliated>(affiliated));
 		}
 
 		public void Update(AffiliatedModel affiliated)
 		{
 			_validator.ValidateAndThrow(affiliated);
-			_affiliatedRepository.Update(_mapper.Map<Affiliated>(affiliated));
+			_unitOfWork.AffiliatedRepository.Update(_mapper.Map<Affiliated>(affiliated));
 		}
 
 		public void Remove(AffiliatedModel affiliated)
 		{
-			_affiliatedRepository.Remove(_mapper.Map<Affiliated>(affiliated));
+			_unitOfWork.AffiliatedRepository.Remove(_mapper.Map<Affiliated>(affiliated));
 		}
 	}
 }

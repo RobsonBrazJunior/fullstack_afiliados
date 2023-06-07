@@ -24,7 +24,15 @@ namespace FAbackend.WebApi.Controllers
 		[HttpPost("add")]
 		public void Add([FromBody] CreatorModel creatorModel)
 		{
-			_creatorService.Add(creatorModel);
+			try
+			{
+				_creatorService.Add(creatorModel);
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e);
+				throw;
+			}
 		}
 
 		[HttpPost("update")]

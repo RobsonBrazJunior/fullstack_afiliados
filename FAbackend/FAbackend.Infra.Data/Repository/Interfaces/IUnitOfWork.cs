@@ -4,6 +4,6 @@
 	{
 		ICreatorRepository CreatorRepository { get; }
 		IAffiliatedRepository AffiliatedRepository { get; }
-		int Save();
+		void Save();
 	}
 }
