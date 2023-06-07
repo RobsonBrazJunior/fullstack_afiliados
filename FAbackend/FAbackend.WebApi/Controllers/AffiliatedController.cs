@@ -2,7 +2,7 @@
 using FAbackend.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebApi.Controllers
+namespace FAbackend.WebApi.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
