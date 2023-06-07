@@ -1,4 +1,4 @@
-﻿namespace FAbackend.Entities.Models
+﻿namespace FAbackend.Domain.Entities
 {
 	public class Creator
 	{

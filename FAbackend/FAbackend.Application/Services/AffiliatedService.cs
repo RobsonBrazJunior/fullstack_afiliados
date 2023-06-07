@@ -1,5 +1,5 @@
 ﻿using FAbackend.Application.Interfaces;
-using FAbackend.Entities.Models;
+using FAbackend.Domain.Entities;
 using FAbackend.Infra.Data.Repository.Interfaces;
 
 namespace FAbackend.Application.Services

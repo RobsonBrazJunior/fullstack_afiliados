@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using FAbackend.Entities.Models;
+﻿using FAbackend.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace FAbackend.Infra.Data.Context.Configurations

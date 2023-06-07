@@ -1,4 +1,4 @@
-﻿using FAbackend.Entities.Models;
+﻿using FAbackend.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace FAbackend.Infra.Data.Context
