@@ -1,4 +1,4 @@
-﻿namespace FAbackend.Domain.Models
+﻿namespace FAbackend.Entities.Models
 {
 	public class Affiliated
 	{
