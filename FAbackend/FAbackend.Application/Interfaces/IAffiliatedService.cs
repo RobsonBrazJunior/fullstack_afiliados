@@ -1,12 +1,12 @@
-﻿using FAbackend.Domain.Entities;
+﻿using FAbackend.Domain.Models;
 
 namespace FAbackend.Application.Interfaces
 {
 	public interface IAffiliatedService
 	{
-		Affiliated Get(int id);
-		void Add(Affiliated affiliated);
-		void Update(Affiliated affiliated);
-		void Remove(Affiliated affiliated);
+		AffiliatedModel Get(int id);
+		void Add(AffiliatedModel affiliated);
+		void Update(AffiliatedModel affiliated);
+		void Remove(AffiliatedModel affiliated);
 	}
 }
