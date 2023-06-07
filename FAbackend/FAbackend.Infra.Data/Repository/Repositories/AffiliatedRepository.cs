@@ -1,4 +1,4 @@
-﻿using FAbackend.Domain.Models;
+﻿using FAbackend.Domain.Entities;
 using FAbackend.Infra.Data.Context;
 using FAbackend.Infra.Data.Repository.Interfaces;
 
