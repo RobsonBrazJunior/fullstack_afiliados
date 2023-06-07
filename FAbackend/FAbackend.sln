@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FAbackend.Application", "FA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FAbackend.WebApi", "FAbackend.WebApi\FAbackend.WebApi.csproj", "{B1BAAE71-7369-4D0C-83B3-BFED6B34EC02}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FAbackend.Application.Tests", "FAbackend.Application.Tests\FAbackend.Application.Tests.csproj", "{666E6DF4-F77F-4E5F-9B01-3D8F9F66A1E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B1BAAE71-7369-4D0C-83B3-BFED6B34EC02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1BAAE71-7369-4D0C-83B3-BFED6B34EC02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1BAAE71-7369-4D0C-83B3-BFED6B34EC02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{666E6DF4-F77F-4E5F-9B01-3D8F9F66A1E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{666E6DF4-F77F-4E5F-9B01-3D8F9F66A1E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{666E6DF4-F77F-4E5F-9B01-3D8F9F66A1E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{666E6DF4-F77F-4E5F-9B01-3D8F9F66A1E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
